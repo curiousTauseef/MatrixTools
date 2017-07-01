@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "MathDenseMatrix.hpp"
 #include "MathDenseSolver.hpp"
+#include <algorithm>
 
 bool ExtractSubMatrix()
 {
