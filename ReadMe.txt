@@ -1,40 +1,23 @@
-========================================================================
-    CONSOLE APPLICATION : MatrixTools Project Overview
-========================================================================
+/////////////////////////////////////////////////////////////////////////////////////////////////
+> Matrix Tools
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
-AppWizard has created this MatrixTools application for you.
+This is a tiny generic matrix library for solving
+different matrix tasks including linear equations, determinants, computing inverse matrices
+as well as decompositions. The 2D matrices can either have a dynamic (runtime) imposed number of rows and columns 
+or in order to make things a lot safer and catch many of the possible errors at compile time the number of rows and
+columns can be directly imposed as template parameters. The matrices are also designed to be STL friendly
+up to a certain point thanks to the cusom iterators that are included.
 
-This file contains a summary of what you will find in each of the files that
-make up your MatrixTools application.
+The problems are divided according to the specific tasks which need to be acomplished:
+-solving linear equations (Gauss with partial pivoting implemented)
+-computing inverse matrices (Gauss Jordan method implemented)
+-LU decomposition (Crout and Doolittle algorithms)
+-computing determinants (using either Gauss or LU decomposition<Crout/Doolittle>)
 
-
-MatrixTools.vcxproj
-    This is the main project file for VC++ projects generated using an Application Wizard.
-    It contains information about the version of Visual C++ that generated the file, and
-    information about the platforms, configurations, and project features selected with the
-    Application Wizard.
-
-MatrixTools.vcxproj.filters
-    This is the filters file for VC++ projects generated using an Application Wizard. 
-    It contains information about the association between the files in your project 
-    and the filters. This association is used in the IDE to show grouping of files with
-    similar extensions under a specific node (for e.g. ".cpp" files are associated with the
-    "Source Files" filter).
-
-MatrixTools.cpp
-    This is the main application source file.
-
-/////////////////////////////////////////////////////////////////////////////
-Other standard files:
-
-StdAfx.h, StdAfx.cpp
-    These files are used to build a precompiled header (PCH) file
-    named MatrixTools.pch and a precompiled types file named StdAfx.obj.
-
-/////////////////////////////////////////////////////////////////////////////
-Other notes:
-
-AppWizard uses "TODO:" comments to indicate parts of the source code you
-should add to or customize.
-
-/////////////////////////////////////////////////////////////////////////////
+The plan is to add new algorithms for solving each problem and create a complete library which
+contains the basic algorithms for performing matrix calculations. The library can be used without building
+it, the .hpp files can be included right away for maximum flexibility. The actual declarations are
+kept in the .hpp files and the definitions for the methods are provided in the inline files, just for the 
+sake of keeping things nice and clean. For usage examples the library contains a .cpp file
+which can be compiled into an executable just to see how things work from the start.
